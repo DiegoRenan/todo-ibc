@@ -1,0 +1,18 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: todo-ibc_development
+test:
+  <<: *default
+  database: todo-ibc_test
+
+production:
+  <<: *default
+  database: todo-ibc_production
+  username: todo-ibc
+  password: <%= ENV['TODO-IBC_DATABASE_PASSWORD'] %>
