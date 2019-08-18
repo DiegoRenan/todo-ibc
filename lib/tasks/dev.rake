@@ -9,7 +9,7 @@ namespace :dev do
 
     puts "Creating boards"
 
-    7.times do |i|
+    21.times do |i|
       Board.create!(
         title: Faker::Company.name,
       )

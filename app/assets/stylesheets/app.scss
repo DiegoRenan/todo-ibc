@@ -1,0 +1,28 @@
+@import 'bootstrap';
+
+body {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 10px;
+}
+
+a {
+  color: #000;
+  
+  &:visited {
+    color: #666;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+.card {
+  width: 250px;
+  background-color: #DFE1E6;
+  border: none;
+  padding: 5px;
+  margin: 0;
+}
