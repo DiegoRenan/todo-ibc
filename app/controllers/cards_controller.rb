@@ -1,7 +1,12 @@
 class CardsController < ApplicationController
+  before_action :set_card, only: [:edit, :update]
+
   def index
     @cards = Card.all
     render json: @cards
+  end
+
+  def edit
   end
 
   def create
@@ -10,10 +15,24 @@ class CardsController < ApplicationController
     redirect_to board_path(@board)
   end
 
+  def update
+    @board = Board.find(@card.board_id)
+  
+    if @card.update(card_params)
+      redirect_to @board
+    else
+      render 'edit'
+    end
+  end
+
   private
   
     def card_params
       params.require(:card).permit(:title)
+    end
+
+    def set_card
+      @card = Card.find(params[:id])
     end
 
 end

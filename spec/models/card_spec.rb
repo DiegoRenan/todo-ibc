@@ -53,4 +53,13 @@ RSpec.describe Card, type: :model do
 
   end
 
+  context 'associations' do
+
+    it 'belong_to board' do
+      card = create(:card)
+      expect(card.board_id?).to be_truthy
+    end
+  
+  end
+
 end

@@ -18,6 +18,12 @@ RSpec.describe CardsController, type: :controller do
         post :create, params: { card: card_params, board_id: @card.board_id}
       }.to change(Card, :count).by(1)
     end
+
+    it 'to update' do
+      put :update, params:  { id: @card.id, card: { title: 'Update title' }  }
+      card = Card.find(@card.id)
+      expect(card.title).to eq('Update title')
+    end
   
   end
 
