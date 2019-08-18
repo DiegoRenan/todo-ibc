@@ -29,6 +29,12 @@ RSpec.describe BoardsController, type: :controller do
       board = Board.find(@board.id)
       expect(board.title).to eq('Update title')
     end
+
+    it 'to delete' do
+      expect {
+        delete :destroy, params: { id: @board.id }
+      }.to change(Board, :count).by(-1)
+    end
     
   end
 end

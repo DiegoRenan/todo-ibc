@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_board, only: [:show, :edit, :update]
+  before_action :set_board, only: [:show, :edit, :update, :destroy]
 
   def index
     @boards = Board.all
@@ -31,6 +31,12 @@ class BoardsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @board.destroy
+ 
+    redirect_to boards_path
   end
 
   private
