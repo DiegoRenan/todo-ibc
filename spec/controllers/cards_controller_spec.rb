@@ -24,6 +24,12 @@ RSpec.describe CardsController, type: :controller do
       card = Card.find(@card.id)
       expect(card.title).to eq('Update title')
     end
+
+    it 'to delete' do
+      expect {
+        delete :destroy, params: { id: @chore.id }
+      }.to change(Chore, :count).by(-1)
+    end
   
   end
 

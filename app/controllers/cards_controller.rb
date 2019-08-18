@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :set_card, only: [:edit, :update]
+  before_action :set_card, only: [:edit, :update, :destroy]
 
   def index
     @cards = Card.all
@@ -23,6 +23,14 @@ class CardsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @board = Board.find(@card.board_id)
+
+    @card.destroy
+ 
+    redirect_to @board
   end
 
   private
