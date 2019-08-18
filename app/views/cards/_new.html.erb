@@ -1,0 +1,8 @@
+<%= form_with(model: [ @board, @board.cards.build ], local: true) do |form| %>
+  <p>
+    <%= form.text_field :title, class: 'form-control', required: true %>
+  </p>
+  <p>
+    <%= form.submit 'Add new card', class: "btn btn-secondary btn-block" %>
+  </p>
+<% end %>

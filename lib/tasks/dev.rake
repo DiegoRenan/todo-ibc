@@ -17,5 +17,16 @@ namespace :dev do
 
     puts "Boards successfully created"
 
+    puts "Creating Cards"
+
+    rand(1...10).times do |i|
+      Card.create!(
+        title: Faker::Verb.simple_present,
+        board_id: Board.all.sample.id
+      )
+    end
+
+    puts "Cards successfully created"
+
   end
 end
