@@ -8,16 +8,24 @@ RSpec.describe ChoresController, type: :controller do
       @chore = create(:chore)
     end
 
-    it 'to show' do  
-      get :show, params: { id: @chore.id, card_id: @chore.card_id }
-      expect(response).to have_http_status(200)
-    end
-
     it 'to create' do
       chore_params = attributes_for(:chore)
       expect {
         post :create, params: { chore: chore_params, card_id: @chore.card_id}
       }.to change(Chore, :count).by(1)
+    end
+
+
+    it 'to update' do
+      put :update, params:  { id: @chore.id, chore: { title: 'Update title' }  }
+      chore = Chore.find(@chore.id)
+      expect(chore.title).to eq('Update title')
+    end
+
+    it 'to delete' do
+      expect {
+        delete :destroy, params: { id: @chore.id }
+      }.to change(Chore, :count).by(-1)
     end
 
   end
