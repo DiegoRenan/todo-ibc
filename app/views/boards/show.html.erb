@@ -1,1 +1,8 @@
 <%= render 'navbar' %>
+
+<div class="board flex-row d-inline-flex">
+  <%= render @board.cards%>
+  <div class="form">
+    <%= render 'cards/new', board: @board%>
+  </div>
+</div>

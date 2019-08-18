@@ -1,0 +1,14 @@
+<%= form_with model: @card, local: true do |form| %>
+ 
+  <%= render 'shared/error_messages', object: form.object %>
+ 
+  <div class="form-group">
+    <%= form.label :title %><br>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+ 
+  <p>
+    <%= form.submit 'Salvar', class: "btn btn-secondary btn-block" %>
+  </p>
+ 
+<% end %>

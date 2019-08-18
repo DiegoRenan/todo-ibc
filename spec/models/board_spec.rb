@@ -43,4 +43,13 @@ RSpec.describe Board, type: :model do
 
   end
 
+  context 'associations' do
+
+    it 'has_many cards' do
+      board = create(:board, :with_cards)
+      expect(board.cards.count).to eq(3)
+    end
+
+  end
+
 end

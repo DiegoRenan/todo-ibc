@@ -1,5 +1,12 @@
 .card-board {
   margin: 10px;
+  padding: 5px;
   height: 20vh;
   overflow: hidden; 
+}
+
+.board {
+  overflow-x: scroll;
+  width: 100%;
+  min-height: 75vh;
 }
