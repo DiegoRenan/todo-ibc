@@ -53,6 +53,7 @@ label {
   color: #FFFFFF !important;
 }
 
+
 .card {
   width: 250px;
   background-color: #DFE1E6;
@@ -64,10 +65,19 @@ label {
 .form {
   margin: 10px;
 }
+
+.alert {
+  width: 100% !important;
+  margin-bottom: 5px;
+  padding: 5px !important;
+  cursor: pointer
+}
+
 .menu {
   margin: 0;
   padding: 0;
 }
+
 .menu-item {
   margin-left: 5px;
 }

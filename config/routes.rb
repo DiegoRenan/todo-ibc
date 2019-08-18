@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resources :cards
   end
 
-  resources :cards
+  resources :cards do 
+    resources :chores
+  end
+
+  resources :chores
 
 end

@@ -19,10 +19,20 @@
 
 FactoryBot.define do
   factory :card do
-        
+    
+    transient do
+      qtd_chores 3
+    end
+    
     sequence(:title) { |n| "Card - #{n}" }
     
     board
+
+    trait :with_chores do
+      after(:create) do |card, evaluator|
+        create_list(:chore, evaluator.qtd_chores, card: card)
+      end
+    end
 
   end
 end

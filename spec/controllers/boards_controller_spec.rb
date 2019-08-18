@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe BoardsController, type: :controller do
+  
   context 'successfully resquet' do
 
     before do
@@ -37,4 +38,5 @@ RSpec.describe BoardsController, type: :controller do
     end
     
   end
+  
 end

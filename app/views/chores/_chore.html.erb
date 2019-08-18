@@ -1,0 +1,9 @@
+<div class='alert alert-light' 
+      id='<%= chore.id %>',
+      data-toggle="modal", 
+      data-target="#exampleModalLong"> 
+      
+      <%= chore.title %> 
+</div>
+
+<%= render 'chores/modal', chore: chore%>

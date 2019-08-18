@@ -8,5 +8,11 @@
       <%= card.title %>
     </h5>
 
+    <div class="chores" id="div-card-<%= card.id%>">
+      <%= render card.chores %>
+    </div>
+
+    <%= render 'chores/new', card: card %>
+
   </div>
 </div>

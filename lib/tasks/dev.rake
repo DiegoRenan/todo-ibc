@@ -19,7 +19,7 @@ namespace :dev do
 
     puts "Creating Cards"
 
-    rand(1...10).times do |i|
+    10.times do |i|
       Card.create!(
         title: Faker::Verb.simple_present,
         board_id: Board.all.sample.id
@@ -27,6 +27,18 @@ namespace :dev do
     end
 
     puts "Cards successfully created"
+
+    puts "Creating Chores"
+
+    10.times do |i|
+      Chore.create!(
+        title: Faker::Verb.simple_present,
+        description: Faker::Lorem.paragraph,
+        card_id: Card.all.sample.id
+      )
+    end
+
+    puts "Chores successfully created"
 
   end
 end

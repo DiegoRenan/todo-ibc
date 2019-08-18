@@ -1,0 +1,13 @@
+<%= form_for([card, card.chores.build ], remote: true ) do |f| %>
+  <div class="form-row">
+    <div class="col-sm-9">
+      <%= f.text_field :title, 
+                        class: "form-control", 
+                        placeholder: "Add tarefa",  
+                        id: "input-chore-#{ card.id }",
+                        required: true
+                        %>
+    </div>
+    <%= f.submit 'Add', class: "btn btn-small btn-success col-sm-3 mb-2" %>
+  </div>
+<% end %>
