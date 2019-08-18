@@ -1,3 +1,4 @@
+<%= render 'navbar' %>
 <div class="row">
-  <%= render @boards%>
+  <%= render @boards.order(updated_at: :desc) %>
 </div>

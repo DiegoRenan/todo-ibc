@@ -10,6 +10,18 @@
 
 FactoryBot.define do
   factory :board do
+    
+    transient do
+      qtd_cards 3
+    end
+    
     title { Faker::Company.name }
+    
+    trait :with_cards do
+      after(:create) do |board, evaluator|
+        create_list(:card, evaluator.qtd_cards, board: board)
+      end
+    end
+
   end
 end

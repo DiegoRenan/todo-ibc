@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_board, only: [:show]
+  before_action :set_board, only: [:show, :edit, :update]
 
   def index
     @boards = Board.all
@@ -12,6 +12,9 @@ class BoardsController < ApplicationController
     @board = Board.new
   end
 
+  def edit
+  end
+
   def create
     @board = Board.new(board_params)
 
@@ -19,6 +22,14 @@ class BoardsController < ApplicationController
       redirect_to @board
     else
       render 'new'
+    end
+  end
+
+  def update
+    if @board.update(board_params)
+      redirect_to boards_path
+    else
+      render 'edit'
     end
   end
 

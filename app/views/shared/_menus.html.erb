@@ -1,0 +1,23 @@
+<div class="menu">
+  <div class="d-flex flex-row-reverse">
+    
+    <%= link_to id, 
+                method: :delete,  
+                class: 'menu-item' do %>
+
+      <i class="fa fa-trash"></i>
+      
+    <% end %>
+
+    <%= link_to ({
+                  controller: controller,
+                  action: 'edit', 
+                  id: id 
+                }),  
+                class: 'menu-item' do %>
+
+      <i class="fa fa-pencil"></i>
+    <% end %>
+
+  </div>
+</div>

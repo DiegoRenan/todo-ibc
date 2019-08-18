@@ -10,7 +10,6 @@ main {
 
 a {
   color: #666;
-  
 }
 
 div {
@@ -58,6 +57,14 @@ label {
   width: 250px;
   background-color: #DFE1E6;
   border: none;
-  padding: 5px;
   margin: 0;
+  padding: 0;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+}
+.menu-item {
+  margin-left: 5px;
 }

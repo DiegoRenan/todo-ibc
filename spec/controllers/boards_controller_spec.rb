@@ -23,6 +23,12 @@ RSpec.describe BoardsController, type: :controller do
         post :create, params: { board: board_params }
       }.to change(Board, :count).by(1)
     end
+
+    it 'to update' do
+      put :update, params:  { id: @board.id, board: { title: 'Update title' }  }
+      board = Board.find(@board.id)
+      expect(board.title).to eq('Update title')
+    end
     
   end
 end
