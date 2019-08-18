@@ -11,6 +11,18 @@ RSpec.describe BoardsController, type: :controller do
       get :index
       expect(response).to have_http_status(200)
     end
+
+    it 'to show' do
+      get :show, params: { id: @board.id }
+      expect(response).to have_http_status(200)
+    end
+
+    it 'to create' do
+      board_params = attributes_for(:board)
+      expect {
+        post :create, params: { board: board_params }
+      }.to change(Board, :count).by(1)
+    end
     
   end
 end
