@@ -1,0 +1,70 @@
+@import 'bootstrap';
+
+body {
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+
+main {
+  padding-top: 10px;
+}
+
+a {
+  color: #666;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+
+#error_explanation {
+  width: 100%;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  color: red;
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+.field_with_errors {
+  padding: 2px;
+  
+  .form-control {
+    color: red;
+  }
+}
+
+
+label {
+  display: block;
+}
+
+.navbar a,
+.fa-plus {
+  color: #FFFFFF !important;
+}
+
+.card {
+  width: 250px;
+  background-color: #DFE1E6;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+}
+.menu-item {
+  margin-left: 5px;
+}
