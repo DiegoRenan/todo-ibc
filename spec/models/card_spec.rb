@@ -59,7 +59,12 @@ RSpec.describe Card, type: :model do
       card = create(:card)
       expect(card.board_id?).to be_truthy
     end
-  
+
+    it 'has_many chores' do
+      card = create(:card, :with_chores)
+      expect(card.chores.count).to eq(3)
+    end
+    
   end
 
 end

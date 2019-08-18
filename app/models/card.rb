@@ -19,6 +19,8 @@
 
 class Card < ApplicationRecord
   belongs_to :board
+  has_many :chores, dependent: :destroy
+  
   validates :title, presence: true,
                     length: { minimum: 2, maximum: 50 }
 end

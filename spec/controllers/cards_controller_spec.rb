@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CardsController, type: :controller do
+  
   context 'successfully resquet' do
 
     before do
@@ -27,8 +28,8 @@ RSpec.describe CardsController, type: :controller do
 
     it 'to delete' do
       expect {
-        delete :destroy, params: { id: @chore.id }
-      }.to change(Chore, :count).by(-1)
+        delete :destroy, params: { id: @card.id }
+      }.to change(Card, :count).by(-1)
     end
   
   end

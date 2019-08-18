@@ -1,0 +1,2 @@
+$("<%= escape_javascript(render @chore) %>").appendTo("#div-card-<%= @chore.card_id %>");
+$("#input-chore-<%= @chore.card_id %>").val(' ')
