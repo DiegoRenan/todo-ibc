@@ -13,6 +13,8 @@ test:
 
 production:
   <<: *default
-  database: todo-ibc_production
-  username: todo-ibc
-  password: <%= ENV['TODO-IBC_DATABASE_PASSWORD'] %>
+  database: <%= Rails.application.credentials[:production][:aws][:RDS_DB_NAME] %>
+  username: <%= Rails.application.credentials[:production][:aws][:RDS_USERNAME] %>
+  password: <%= Rails.application.credentials[:production][:aws][:RDS_PASSWORD] %>
+  host: <%= Rails.application.credentials[:production][:aws][:RDS_HOSTNAME] %>
+  port: <%= Rails.application.credentials[:production][:aws][:RDS_PORT] %>
